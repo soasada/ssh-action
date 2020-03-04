@@ -1,0 +1,30 @@
+name: 'Execute SSH commands'
+description: 'Execute SSH commands with github actions'
+author: 'soasada'
+inputs:
+  host:
+    description: "Hostname or IP address of the server."
+    required: true
+  username:
+    description: "Username for authentication."
+    required: true
+  port:
+    description: "Port number of the server."
+    required: true
+  key:
+    description: "File Location or string that contains a private key for either key-based or hostbased user authentication (OpenSSH format)"
+    required: true
+  script:
+    description: "Script to execute on the remote server."
+    required: true
+  args:
+    description: "SSH parameters for example: -f."
+    required: false
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
+branding:
+  color: "green"
+  icon: "terminal"
