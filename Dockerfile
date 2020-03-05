@@ -1,6 +1,6 @@
-FROM alpine:latest
+FROM ubuntu:latest
 
-RUN apk update && apk add --no-cache ca-certificates openssh-client bash
+RUN apt update && apt install -y ca-certificates openssh-client bash
 
 COPY entrypoint.sh /entrypoint.sh
 
