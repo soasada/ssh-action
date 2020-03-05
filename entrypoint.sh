@@ -11,19 +11,16 @@ INPUT_SCRIPT=$6
 INPUT_ARGS=$7
 
 SSHPATH="$HOME/.ssh"
+mkdir -p "$SSHPATH"
+touch "$SSH_PATH/known_hosts"
 
-if [ ! -d "$SSHPATH" ]; then
-  mkdir "$SSHPATH"
-fi
+echo "$INPUT_KEY" > "$SSHPATH/id_rsa"
 
-if [ ! -f "$SSHPATH/known_hosts" ]; then
-  touch "$SSHPATH/known_hosts"
-fi
-
-echo "$INPUT_KEY" > "$SSHPATH/client_key"
-echo "$INPUT_PUBKEY" >> "$SSHPATH/known_hosts"
 chmod 700 "$SSHPATH"
+ssh-keyscan $INPUT_HOST >> "$SSHPATH/known_hosts"
 chmod 600 "$SSHPATH/known_hosts"
-chmod 600 "$SSHPATH/client_key"
+chmod 600 "$SSHPATH/id_rsa"
 
-ssh $INPUT_ARGS -i $SSHPATH/client_key -p $INPUT_PORT ${INPUT_USERNAME}@${INPUT_HOST} "$INPUT_SCRIPT"
+ssh-add "$SSHPATH/id_rsa"
+
+ssh $INPUT_ARGS -i $SSHPATH/id_rsa -p $INPUT_PORT ${INPUT_USERNAME}@${INPUT_HOST} "$INPUT_SCRIPT"
