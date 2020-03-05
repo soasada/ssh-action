@@ -17,7 +17,7 @@ touch "$SSHPATH/known_hosts"
 echo "$INPUT_KEY" > $SSHPATH/id_rsa
 
 chmod 700 $SSHPATH
-echo "${INPUT_HOST} ssh-rsa ${INPUT_PUBKEY}" > $SSHPATH/known_hosts
+echo "${INPUT_PUBKEY}" > $SSHPATH/known_hosts
 chmod 600 $SSHPATH/known_hosts
 chmod 600 $SSHPATH/id_rsa
 
