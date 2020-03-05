@@ -12,4 +12,3 @@ jobs:
           port: ${{ secrets.PORT }}
           key: ${{ secrets.KEY }}
           script: ls -la
-          args: "-f"
