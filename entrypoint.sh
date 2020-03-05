@@ -12,7 +12,7 @@ INPUT_ARGS=$7
 
 SSHPATH="$HOME/.ssh"
 mkdir -p "$SSHPATH"
-touch "$SSH_PATH/known_hosts"
+touch "$SSHPATH/known_hosts"
 
 echo "$INPUT_KEY" > "$SSHPATH/id_rsa"
 
