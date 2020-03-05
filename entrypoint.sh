@@ -25,6 +25,7 @@ chmod 600 "$SSHPATH/known_hosts"
 chmod 600 "$SSHPATH/server_key"
 
 # Add server fingerprint to avoid "Host key verification failed" error
+ssh-keygen -R $INPUT_HOST
 ssh-keyscan -H $INPUT_HOST >> $SSHPATH/known_hosts
 
 ssh $INPUT_ARGS -i $SSHPATH/server_key -p $INPUT_PORT ${INPUT_USERNAME}@${INPUT_HOST} "$INPUT_SCRIPT"
