@@ -17,7 +17,7 @@ touch "$SSHPATH/known_hosts"
 echo "$INPUT_KEY" > $SSHPATH/id_rsa
 
 chmod 700 $SSHPATH
-chmod 400 $SSHPATH/known_hosts
-chmod 400 $SSHPATH/id_rsa
+chmod 600 $SSHPATH/known_hosts
+chmod 600 $SSHPATH/id_rsa
 
 ssh $INPUT_ARGS -i $SSHPATH/id_rsa -o StrictHostKeyChecking=no -p $INPUT_PORT ${INPUT_USERNAME}@${INPUT_HOST} "$INPUT_SCRIPT"
