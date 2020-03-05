@@ -10,9 +10,11 @@ INPUT_PUBKEY=$5
 INPUT_SCRIPT=$6
 INPUT_ARGS=$7
 
-SSHPATH="$HOME/.ssh"
-mkdir -p $SSHPATH
-echo "$INPUT_KEY" > $SSHPATH/id_rsa
-chmod 600 $SSHPATH/id_rsa
+mkdir -p ~/.ssh
 
-ssh $INPUT_ARGS -i $SSHPATH/id_rsa -p $INPUT_PORT ${INPUT_USERNAME}@${INPUT_HOST} "$INPUT_SCRIPT"
+echo "$INPUT_KEY" > ~/.ssh/id_rsa
+chmod 600 ~/.ssh/id_rsa
+echo "$INPUT_PUBKEY" > ~/.ssh/known_hosts
+chmod 600 ~/.ssh/known_hosts
+
+ssh $INPUT_ARGS -i ~/.ssh/id_rsa -p $INPUT_PORT ${INPUT_USERNAME}@${INPUT_HOST} "$INPUT_SCRIPT"

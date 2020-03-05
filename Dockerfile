@@ -1,6 +1,4 @@
-FROM alpine:latest
-
-RUN apk update && apk add --no-cache ca-certificates openssh-client bash
+FROM ubuntu:latest
 
 COPY entrypoint.sh /entrypoint.sh
 
