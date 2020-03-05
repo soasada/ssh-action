@@ -12,7 +12,10 @@ inputs:
     description: "Port number of the server."
     required: true
   key:
-    description: "File Location or string that contains a private key for either key-based or hostbased user authentication (OpenSSH format)"
+    description: "Client private key"
+    required: true
+  pubkey:
+    description: "Server public key"
     required: true
   script:
     description: "Script to execute on the remote server."
@@ -29,6 +32,7 @@ runs:
     - ${{ inputs.username }}
     - ${{ inputs.port }}
     - ${{ inputs.key }}
+    - ${{ inputs.pubkey }}
     - ${{ inputs.script }}
     - ${{ inputs.args }}
 

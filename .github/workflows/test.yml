@@ -11,4 +11,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           port: ${{ secrets.PORT }}
           key: ${{ secrets.KEY }}
+          pubkey: ${{ secrets.PUBKEY }}
           script: ls -la
+          args: -v

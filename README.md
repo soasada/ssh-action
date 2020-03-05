@@ -1,2 +1,7 @@
 # ssh-action
-SSH for github
+
+Just another SSH action for github.
+
+# Before you start using this action
+
+
