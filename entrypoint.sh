@@ -11,8 +11,9 @@ INPUT_SCRIPT=$6
 INPUT_ARGS=$7
 
 SSHPATH="$HOME/.ssh"
-mkdir -p "$SSHPATH"
-touch "$SSHPATH/known_hosts"
+mkdir -p $SSHPATH
+rm -rf $SSHPATH/known_hosts
+touch $SSHPATH/known_hosts
 
 echo "$INPUT_KEY" > $SSHPATH/id_rsa
 
