@@ -21,6 +21,7 @@ ssh-keyscan $INPUT_HOST >> "$SSHPATH/known_hosts"
 chmod 600 "$SSHPATH/known_hosts"
 chmod 600 "$SSHPATH/id_rsa"
 
+eval $(ssh-agent)
 ssh-add "$SSHPATH/id_rsa"
 
 ssh $INPUT_ARGS -i $SSHPATH/id_rsa -p $INPUT_PORT ${INPUT_USERNAME}@${INPUT_HOST} "$INPUT_SCRIPT"
