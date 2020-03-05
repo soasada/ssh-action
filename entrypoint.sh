@@ -24,7 +24,7 @@ chmod 700 "$SSHPATH"
 chmod 600 "$SSHPATH/known_hosts"
 chmod 600 "$SSHPATH/server_key"
 
-if [ ! -d "/dev/tty" ]; then
+if [ ! -d /dev/tty ]; then
   mknod -m 666 /dev/tty c 5 0
 fi
 
