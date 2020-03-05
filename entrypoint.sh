@@ -1,4 +1,6 @@
-#!/bin/sh -l
+#!/bin/bash
+
+set -eu
 
 INPUT_HOST=$1
 INPUT_USERNAME=$2
