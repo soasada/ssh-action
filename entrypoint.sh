@@ -24,7 +24,8 @@ chmod 700 "$SSHPATH"
 chmod 600 "$SSHPATH/known_hosts"
 chmod 600 "$SSHPATH/server_key"
 
-rm /dev/tty
-ln -s /dev/ttyS0 /dev/tty
+if [ ! -d "/dev/tty" ]; then
+  sudo mknod -m 666 /dev/tty c 5 0
+fi
 
 ssh $INPUT_ARGS -i $SSHPATH/server_key -p $INPUT_PORT ${INPUT_USERNAME}@${INPUT_HOST} "$INPUT_SCRIPT"
