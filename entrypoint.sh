@@ -16,7 +16,7 @@ echo "$INPUT_KEY" > ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa
 #echo "$INPUT_PUBKEY" > ~/.ssh/known_hosts
 #chmod 600 ~/.ssh/known_hosts
-
+echo "UserKnownHostsFile ~/.ssh/known_hosts" > /etc/ssh/ssh_config
 touch ~/.ssh/known_hosts
 
 ssh $INPUT_ARGS -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa -p $INPUT_PORT ${INPUT_USERNAME}@${INPUT_HOST} "$INPUT_SCRIPT"
