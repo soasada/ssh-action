@@ -24,4 +24,4 @@ chmod 600 ~/.ssh/known_hosts
 echo "UserKnownHostsFile ~/.ssh/known_hosts" >> ~/.ssh/ssh_config
 chmod 600 ~/.ssh/ssh_config
 
-ssh $INPUT_ARGS -o KexAlgorithms=ecdsa-sha2-nistp256 -i ~/.ssh/id_rsa -p $INPUT_PORT ${INPUT_USERNAME}@${INPUT_HOST} "$INPUT_SCRIPT"
+ssh $INPUT_ARGS -i ~/.ssh/id_rsa -p $INPUT_PORT ${INPUT_USERNAME}@${INPUT_HOST} "$INPUT_SCRIPT"
