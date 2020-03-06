@@ -11,8 +11,6 @@ INPUT_CLIENTPUBKEY=$6
 INPUT_SCRIPT=$7
 INPUT_ARGS=$8
 
-apt-get update && apt-get install -y openssh-client
-
 mkdir -p ~/.ssh
 
 echo "$INPUT_KEY" > ~/.ssh/id_rsa
