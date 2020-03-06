@@ -1,6 +1,8 @@
 FROM ubuntu:latest
 
-RUN apt update && apt install -y ca-certificates openssh-client bash
+USER root
+
+RUN apt-get update && apt-get install -y openssh-client
 
 COPY entrypoint.sh /entrypoint.sh
 
