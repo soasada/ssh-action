@@ -12,5 +12,6 @@ jobs:
           port: ${{ secrets.PORT }}
           key: ${{ secrets.KEY }}
           pubkey: ${{ secrets.PUBKEY }}
+          clientpubkey: ${{ secrets.CLIENTKEYPUB }}
           script: ls -la
           args: -v

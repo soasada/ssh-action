@@ -17,6 +17,9 @@ inputs:
   pubkey:
     description: "Server public key"
     required: true
+  clientpubkey:
+    description: "Client public key"
+    required: true
   script:
     description: "Script to execute on the remote server."
     required: true
@@ -33,6 +36,7 @@ runs:
     - ${{ inputs.port }}
     - ${{ inputs.key }}
     - ${{ inputs.pubkey }}
+    - ${{ inputs.clientpubkey }}
     - ${{ inputs.script }}
     - ${{ inputs.args }}
 
