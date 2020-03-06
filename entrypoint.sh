@@ -18,10 +18,9 @@ chmod 600 ~/.ssh/id_rsa
 #chmod 600 ~/.ssh/id_rsa.pub
 #echo "$INPUT_PUBKEY" > ~/.ssh/known_hosts
 #chmod 600 ~/.ssh/known_hosts
-echo "UserKnownHostsFile ~/.ssh/known_hosts" >> /etc/ssh/ssh_config
-touch ~/.ssh/known_hosts
+echo "UserKnownHostsFile ~/.ssh/known_hosts" >> ~/.ssh/ssh_config
+chmod 600 ~/.ssh/ssh_config
+echo "|1|DVgp+hFNLoNcge9ugS3bKBFg23k=|pq7ITTZP8D0MqoVFvNQPq9lYgc8= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBPiABjYZaLieP2ZxpUeZb0HfXVpjNW83M3cNVO6gDrpV6Pkgh7OwL6Ixt3ZOsDjql47yz6XSoaC94BNTqBrzwvw=" >> ~/.ssh/known_hosts
+chmod 600 ~/.ssh/known_hosts
 
-ssh $INPUT_ARGS -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa -p $INPUT_PORT ${INPUT_USERNAME}@${INPUT_HOST} "$INPUT_SCRIPT"
-
-cat ~/.ssh/known_hosts
-ssh-keygen -H -F $INPUT_HOST
+ssh $INPUT_ARGS -i ~/.ssh/id_rsa -p $INPUT_PORT ${INPUT_USERNAME}@${INPUT_HOST} "$INPUT_SCRIPT"
