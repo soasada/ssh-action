@@ -15,3 +15,6 @@ jobs:
           clientpubkey: ${{ secrets.CLIENTKEYPUB }}
           script: ls -la
           args: -v
+      - name: show workflow folder
+        run: |
+          ls -la
