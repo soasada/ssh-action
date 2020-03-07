@@ -30,15 +30,6 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.host }}
-    - ${{ inputs.username }}
-    - ${{ inputs.port }}
-    - ${{ inputs.key }}
-    - ${{ inputs.pubkey }}
-    - ${{ inputs.clientpubkey }}
-    - ${{ inputs.script }}
-    - ${{ inputs.args }}
 
 branding:
   color: "green"

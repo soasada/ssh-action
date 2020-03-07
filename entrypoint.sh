@@ -2,15 +2,6 @@
 
 set -eu
 
-INPUT_HOST=$1
-INPUT_USERNAME=$2
-INPUT_PORT=$3
-INPUT_KEY=$4
-INPUT_PUBKEY=$5
-INPUT_CLIENTPUBKEY=$6
-INPUT_SCRIPT=$7
-INPUT_ARGS=$8
-
 mkdir -p ~/.ssh
 
 echo "$INPUT_KEY" > ~/.ssh/id_rsa
