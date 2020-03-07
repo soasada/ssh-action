@@ -4,17 +4,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: ls -la in remote server
-        uses: soasada/ssh-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          port: ${{ secrets.PORT }}
-          key: ${{ secrets.KEY }}
-          pubkey: ${{ secrets.PUBKEY }}
-          clientpubkey: ${{ secrets.CLIENTKEYPUB }}
-          script: ls -la
-          args: -v
       - name: show workflow folder
         run: |
           ls -la
